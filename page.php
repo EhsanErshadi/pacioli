@@ -12,11 +12,10 @@ get_header(); ?>
 
   <main class="content" role="main">
     <div class="container-fluid">
-<?php //echo 'p1';?>
+
     <?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
-        echo 'p2';
 			// Include the page content template.
 			get_template_part( 'template-parts/content', 'page' );
 			// If comments are open or we have at least one comment, load up the comment template.

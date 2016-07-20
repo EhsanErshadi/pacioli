@@ -62,10 +62,10 @@ add_action( 'init', 'pacioli_menus' );
 add_filter( 'wp_nav_menu_items', 'pacioli_add_loginout_link', 10, 2 );
 function pacioli_add_loginout_link( $items, $args ) {    
     if (is_user_logged_in() && $args->theme_location == 'main') {
-        $items .= '<li class="login-btn"><ul class="nav navbar-nav navbar-right"><li><a class="btn btn-blue" role="button" href="'. wp_logout_url() .'">خروج</a></li></ul></li>';
+        $items .= '<li class="login-btn"><ul class="nav navbar-nav navbar-right"><li><a class="btn btn-blue" role="button" href="'. wp_logout_url() .'">'. __('Log Out') .'</a></li></ul></li>';
     }
     elseif (!is_user_logged_in() && $args->theme_location == 'main') {
-        $items .= '<li class="login-btn"><ul class="nav navbar-nav navbar-right"><li><a class="btn btn-primary" role="button" href="'. site_url('wp-login.php') .'">ورود</a></li></ul></li>';
+        $items .= '<li class="login-btn"><ul class="nav navbar-nav navbar-right"><li><a class="btn btn-primary" role="button" href="'. site_url('wp-login.php') .'">'. __('Log In') .'</a></li></ul></li>';
     }
     return $items;
 }
